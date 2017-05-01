@@ -1,0 +1,64 @@
+UDAHHHHH
+
+Ha? buttonya bisa diklik?
+
+ya bisa kalo fieldnya ada isinya
+
+coba ulang. terus liatin console.lognya apakah dia udah berhasil kekirim ke belakang keynya.../
+mantap. undefined itu apa? .
+
+itu salah. nah udah
+
+
+ulang.
+sek. gue mau show cursor. gue dari tadi bingung, kok kursornya diem aja. eh itu cursor gue. sek. pelan pelan
+dah. ulang. pelan pelan.
+
+mantap. tapi kok outboxnya aneh ya?
+
+apanyaa
+
+ini siapa ngirim siapa si?
+
+admin@gmail.com ngirim admin2@gmail.com
+okey. cob liat outbox admin@gmail.com
+
+coba inbox admin2@gmail.com
+liatin yang surya iya yg ituu
+
+okey. gini. mana code yang????
+wait
+mana code yang ngerespon button "view detail"
+
+mana logic yang jelasin dari view list ke view detail message?
+
+nah itu kan parameternya message id kan? /message/idMessage? bener ga? dari front end ngirim gitu?
+bukan lah
+
+kan dari rfront end minta /viewInbox trus dari backend ngasih respon post yang UPDATE blablabla buat masukin key, nah abis UPDATE dia nge render ke viewInbox/:msg_id. paham ga?
+paham.
+gue maunya ditambahi parameternya jadi keynya ditumpangin di url. /viewInbox/:msg_id/:key_msg
+ngerti?
+sek
+2 menit
+lu jawb dulu
+gue ngoding yang lain dulu
+
+NGERTI. Emang gunanaya apa? Maksutnya emang bedanya kalo  dikasih sama gak dikasih apa?
+Ha? nantinya pas ngerender gue pengen panggil si decrypt method. nah keynya itu buat bongkar. jadi method lu yang tadi jadi nambah param URL.
+
+yhaa.. mikir lagi dikit sek
+
+
+sama aja kan, blm bisa nge get -_-
+santai. mana request front lu?
+
+
+tp yg tadi dah bener kan
+salah yang tadi, kita kan ga dapet msg_key ga dari db tapi dari inout
+
+lhoh bentar. lha kan inputnya dah masuk db. oh gitu. ya boleh. sikat.
+progress ya.gue cabut dulu
+pokok udah bisa masuk api lu. si parameternya
+yo
+yauda matiin

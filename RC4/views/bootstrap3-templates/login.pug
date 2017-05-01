@@ -1,0 +1,69 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title E-Surat App
+    // Bootstrap core CSS
+    link(href=`${pathToAssets}/vendor/bootstrap/css/bootstrap.min.css`, rel='stylesheet')
+    <!-- link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet') -->
+    // Custom fonts for this template
+    link(rel='stylesheet', href=`${pathToAssets}/vendor/font-awesome/css/font-awesome.min.css`)
+    link(rel='stylesheet', href=`${pathToAssets}/vendor/simple-line-icons/css/simple-line-icons.css`)
+    link(href=`https://fonts.googleapis.com/css?family=Lato`, rel='stylesheet')
+    link(href=`https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900`, rel='stylesheet')
+    link(href=`https://fonts.googleapis.com/css?family=Muli`, rel='stylesheet')
+    // Plugin CSS
+    link(rel='stylesheet', href=`${pathToAssets}/device-mockups/device-mockups.min.css`)
+    // Custom styles for this template
+    link(href=`${pathToAssets}/css/new-age.min.css`, rel='stylesheet')
+    // Temporary navbar container fix
+    style.
+      .navbar-toggler {
+      z-index: 1;
+      }
+      @media (max-width: 576px) {
+      nav > .container {
+      width: 100%;
+      }
+      }
+
+  body#page-top
+      
+    header.masthead
+      .container
+        .row
+          .col-sm-7
+            .header-content
+              .header-content-inner
+                .col-lg-10.col-lg-offset-1
+                  form#login.form-horizontal(role='form', action='/login', method='post')
+                    h2(style='margin-left: -15px') LOGIN
+                    hr.small
+                    .row
+                      .span_of_2
+                        .span2_of_1
+                          div
+                          h4 Enter your Email:
+                          .book_date.btm
+                            .form-group
+                              .col-sm-9
+                                input#user.form-control(type='Email', placeholder='Email', name='email', style='width: 400px;margin-left:-20px;')
+                          h4 Enter your Password:
+                          .book_date.btm
+                            .form-group
+                              .col-sm-9
+                                input#user.form-control(type='Password', placeholder='Password', name='password', style='width: 400px;margin-left:-20PX;')
+                    a(href='inbox.pug')
+                      button.btn.btn-danger(type='submit', style='margin-left: -20px') Login
+    
+    // Bootstrap core JavaScript
+    script(src='vendor/jquery/jquery.min.js')
+    script(src='vendor/tether/tether.min.js')
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='vendor/jquery-easing/jquery.easing.min.js')
+    // Custom scripts for this template
+    script(src='js/new-age.min.js')

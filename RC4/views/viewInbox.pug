@@ -1,0 +1,93 @@
+doctype html
+html(lang='en')
+  head
+    head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title E-Surat App
+    // Bootstrap core CSS
+    link(href=`/bootstrap-3.3.1/vendor/bootstrap/css/bootstrap.min.css`, rel='stylesheet')
+    <!-- link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet') -->
+    // Custom fonts for this template
+    link(rel='stylesheet', href=`/bootstrap-3.3.1/vendor/font-awesome/css/font-awesome.min.css`)
+    link(rel='stylesheet', href=`/bootstrap-3.3.1/vendor/simple-line-icons/css/simple-line-icons.css`)
+    link(href=`https://fonts.googleapis.com/css?family=Lato`, rel='stylesheet')
+    link(href=`https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900`, rel='stylesheet')
+    link(href=`https://fonts.googleapis.com/css?family=Muli`, rel='stylesheet')
+    // Plugin CSS
+    link(rel='stylesheet', href=`/bootstrap-3.3.1/device-mockups/device-mockups.min.css`)
+    // Custom styles for this template
+    link(href=`/bootstrap-3.3.1/css/new-age.min.css`, rel='stylesheet')
+    // Temporary navbar container fix
+    style.
+      .navbar-toggler {
+      z-index: 1;
+      }
+      @media (max-width: 576px) {
+      nav > .container {
+      width: 100%;
+      }
+      }
+
+  body#page-top
+    header.masthead
+      // Navigation
+      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation', style='background: #262626')
+        .container
+          // Brand and toggle get grouped for better mobile display
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+              
+            a.navbar-brand(href='#') E-Surat
+              i.fa.fa-envelope-square.fa-fw(style='margin-left:-90px')
+            a.navbar-brand(style='color:#fff; margin-left:855px; font-size: 14px') #{login}
+            a.navbar-brand(href='/logout') |  Logout
+          
+      // Page Content
+      .container
+        .row
+          .col-md-3
+            p.lead(style='margin-top: 100px') E-Surat
+            .list-group
+              a.list-group-item(href='/email/compose') Compose
+              a.list-group-item(href='/inbox') Inbox
+              a.list-group-item(href='/outbox') Outbox
+          .col-md-9(style='margin-top: 149px')
+            .thumbnail
+              .caption-full(style='color: #000; margin-top: 20px; margin-left: 20px')
+                for viewInbox2 in viewInbox
+                  h4(style='color: #C2185B; font-size: 20px') #{viewInbox2.msg_source}
+                    a(href='/inbox', style='color: #C2185B')
+                      i.fa.fa-arrow-circle-left.fa-fw.fa-lg(style='margin-left: 600px')
+                  //p #{msg_target}
+                  p(style='font-size: 10px')
+                    | #{viewInbox2.msg_time}
+                    br
+                  p(style='font-size: 25px')  
+                    |  #{viewInbox2.msg_plain}
+                for viewAttachment2 in viewAttachment
+                  if viewAttachment2.id_file
+                    p(style='font-size:15px') Attachment: 
+                      a(style='font-size:15px; margin-bottom:100px', href='/outbox/download/'+ viewAttachment2.id_file)
+                        | #{viewAttachment2.path_file} 
+                    p 
+                    
+              .panel-footer
+                form#reply.form-horizontal(role='form', action='/inbox/viewInbox', method='post')
+                  .form-group
+                  .input-group
+                    input#btn-input.form-control.input-sm(type='text', placeholder='Reply your message here...', name='msg_plain')
+                    span.input-group-btn
+                      button#btn-chat.btn.btn-warning.btn-sm(type='submit', style='background: #C2185B')
+                        | Send
+              //
+                <div class="text-left" style="margin-left: 7px; margin-bottom: 10px">
+                <a class="btn btn-success">Replay</a>
+                </div>
+  
+    // jQuery
+    script(src='/bootstrap-3.3.1/vendor/jquery/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='/bootstrap-3.3.1/vendor/bootstrap/js/bootstrap.min.js')

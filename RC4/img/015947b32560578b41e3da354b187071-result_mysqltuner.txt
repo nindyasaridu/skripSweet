@@ -1,0 +1,127 @@
+	 >>  MySQLTuner 1.7.1 - Major Hayden <major@mhtx.net>
+ >>  Bug reports, feature requests, and downloads at http://mysqltuner.com/
+ >>  Run with '--help' for additional options and output filtering
+[--] Skipped version check for MySQLTuner script
+[OK] Currently running supported MySQL version 5.5.54-0ubuntu0.14.04.1
+[OK] Operating on 64-bit architecture
+ 
+-------- Log file Recommendations ------------------------------------------------------------------
+[--] Log file: /var/log/mysql/error.log(0B)
+[OK] Log file /var/log/mysql/error.log exists
+[OK] Log file /var/log/mysql/error.log is readable.
+[!!] Log file /var/log/mysql/error.log is empty
+[OK] Log file /var/log/mysql/error.log is smaller than 32 Mb
+[OK] /var/log/mysql/error.log doesn't contain any warning.
+[OK] /var/log/mysql/error.log doesn't contain any error.
+[--] 0 start(s) detected in /var/log/mysql/error.log
+[--] 0 shutdown(s) detected in /var/log/mysql/error.log
+ 
+-------- Storage Engine Statistics -----------------------------------------------------------------
+[--] Status: +ARCHIVE +BLACKHOLE +CSV -FEDERATED +InnoDB +MEMORY +MRG_MYISAM +MyISAM +PERFORMANCE_SCHEMA 
+[--] Data in InnoDB tables: 16K (Tables: 1)
+[OK] Total fragmented tables: 0
+ 
+-------- Security Recommendations ------------------------------------------------------------------
+[OK] There are no anonymous accounts for any database users
+[OK] All database users have passwords assigned
+[!!] User 'mechanicalcity@localhost' has user name as password.
+[!!] User 'dokumentasi_lfs@%' hasn't specific host restriction.
+[!!] User 'input2016@%' hasn't specific host restriction.
+[!!] User 'kromatin@%' hasn't specific host restriction.
+[!!] User 'pditt@%' hasn't specific host restriction.
+[!!] User 'pentester@%' hasn't specific host restriction.
+[!!] There is no basic password file list!
+ 
+-------- CVE Security Recommendations --------------------------------------------------------------
+[--] Skipped due to --cvefile option undefined
+ 
+-------- Performance Metrics -----------------------------------------------------------------------
+[--] Up for: 9d 23h 54m 0s (740K q [0.857 qps], 184 conn, TX: 3G, RX: 18M)
+[--] Reads / Writes: 92% / 8%
+[--] Binary logging is disabled
+[--] Physical Memory     : 3.8G
+[--] Max MySQL memory    : 709.8M
+[--] Other process memory: 245.0M
+[--] Total buffers: 304.0M global + 2.7M per thread (151 max threads)
+[--] P_S Max memory usage: 0B
+[--] Galera GCache Max memory usage: 0B
+[OK] Maximum reached memory usage: 322.8M (8.35% of installed RAM)
+[OK] Maximum possible memory usage: 709.8M (18.36% of installed RAM)
+[OK] Overall possible memory usage with other process is compatible with memory available
+[OK] Slow queries: 0% (0/740K)
+[OK] Highest usage of available connections: 4% (7/151)
+[OK] Aborted connections: 2.17%  (4/184)
+[!!] Query cache may be disabled by default due to mutex contention.
+[OK] Query cache efficiency: 100.0% (739K cached / 739K selects)
+[OK] Query cache prunes per day: 0
+[OK] Sorts requiring temporary tables: 0% (0 temp sorts / 3 sorts)
+[OK] No joins without indexes
+[OK] Temporary tables created on disk: 23% (66 on disk / 282 total)
+[OK] Thread cache hit rate: 96% (7 created / 184 connections)
+[OK] Table cache hit rate: 86% (44 open / 51 opened)
+[OK] Open file limit used: 4% (48/1K)
+[OK] Table locks acquired immediately: 100% (115 immediate / 115 locks)
+ 
+-------- Performance schema ------------------------------------------------------------------------
+[--] Performance schema is disabled.
+[--] Memory used by P_S: 0B
+[--] Sys schema isn't installed.
+ 
+-------- ThreadPool Metrics ------------------------------------------------------------------------
+[--] ThreadPool stat is disabled.
+ 
+-------- MyISAM Metrics ----------------------------------------------------------------------------
+[!!] Key buffer used: 18.2% (24M used / 134M cache)
+[OK] Key buffer size / total MyISAM indexes: 128.0M/101.0K
+[!!] Read Key buffer hit rate: 41.7% (12 cached / 7 reads)
+ 
+-------- InnoDB Metrics ----------------------------------------------------------------------------
+[--] InnoDB is enabled.
+[--] InnoDB Thread Concurrency: 0
+[!!] InnoDB File per table is not activated
+[OK] InnoDB buffer pool / data size: 128.0M/16.0K
+[!!] Ratio InnoDB log file size / InnoDB Buffer pool size (7.8125 %): 5.0M * 2/128.0M should be equal 25%
+[OK] InnoDB buffer pool instances: 1
+[--] InnoDB Buffer Pool Chunk Size not used or defined in your version
+[OK] InnoDB Read buffer efficiency: 98.60% (27069 hits/ 27452 total)
+[!!] InnoDB Write Log efficiency: 333.33% (10 hits/ 3 total)
+[OK] InnoDB log waits: 0.00% (0 waits / 13 writes)
+ 
+-------- AriaDB Metrics ----------------------------------------------------------------------------
+[--] AriaDB is disabled.
+ 
+-------- TokuDB Metrics ----------------------------------------------------------------------------
+[--] TokuDB is disabled.
+ 
+-------- XtraDB Metrics ----------------------------------------------------------------------------
+[--] XtraDB is disabled.
+ 
+-------- RocksDB Metrics ---------------------------------------------------------------------------
+[--] RocksDB is disabled.
+ 
+-------- Spider Metrics ----------------------------------------------------------------------------
+[--] Spider is disabled.
+ 
+-------- Connect Metrics ---------------------------------------------------------------------------
+[--] Connect is disabled.
+ 
+-------- Galera Metrics ----------------------------------------------------------------------------
+[--] Galera is disabled.
+ 
+-------- Replication Metrics -----------------------------------------------------------------------
+[--] Galera Synchronous replication: NO
+[--] No replication slave(s) for this server.
+[--] This is a standalone server.
+ 
+-------- Recommendations ---------------------------------------------------------------------------
+General recommendations:
+    Set up a Secure Password for user@host ( SET PASSWORD FOR 'user'@'SpecificDNSorIp' = PASSWORD('secure_password'); )
+    Restrict Host for user@% to user@SpecificDNSorIp
+    Enable the slow query log to troubleshoot bad queries
+    Performance shouldn't be activated for MySQL and MariaDB 5.5 and lower version
+    Consider installing Sys schema from https://github.com/mysql/mysql-sys
+Variables to adjust:
+    query_cache_type (=0)
+    performance_schema = OFF disable PFS
+    innodb_file_per_table=ON
+    innodb_log_file_size * innodb_log_files_in_group should be equals to 1/4 of buffer pool size (=64M) if possible.
