@@ -1,0 +1,21 @@
+{
+  "name": "tugasakhir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "arc4": "^3.3.7",
+    "express-validation": "^1.0.1",
+    "google-auth-library": "^0.10.0",
+    "googleapis": "^18.0.0",
+    "hapi": "^16.1.0",
+    "joi": "^10.2.2",
+    "nodemailer": "^3.1.7",
+    "xxtea-node": "^1.1.2"
+  }
+}

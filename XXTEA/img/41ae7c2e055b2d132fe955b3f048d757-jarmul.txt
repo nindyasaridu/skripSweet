@@ -1,0 +1,15 @@
+image
+jpg -> png
+jpg -> bmp
+jpg -> tif
+
+video 
+mp4 -> MPEG
+mp4 -> flv
+mp4 -> avi
+
+audio 
+au -> aiff
+au -> ogg
+au -> ac3
+
