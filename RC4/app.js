@@ -8,6 +8,8 @@ var mysql = require('mysql');
 var expressSession = require('express-session');
 var validator = require('express-validator');
 var boom = require('express-boom'); 
+var fs = require('fs')
+var https = require('https');
 
 var app = express();
 
@@ -72,10 +74,17 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// app.listen(8080, function(){
+//   console.log("Listening on port " + 8080);
+// });
 
-app.listen(8080, function(){
-  console.log("Listening on port " + 8080);
+var options = {
+    key: fs.readFileSync("server.key"),
+    cert: fs.readFileSync("server.crt")
+};
+
+https.createServer(options, app).listen(8000, function() {
+    console.log("Listening on port " + 8000);
 });
-
 
 module.exports = app;

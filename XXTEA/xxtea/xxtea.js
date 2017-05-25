@@ -1,19 +1,3 @@
-/**********************************************************\
-|                                                          |
-| xxtea.js                                                 |
-|                                                          |
-| XXTEA encryption algorithm library for Node.js.          |
-|                                                          |
-| Encryption Algorithm Authors:                            |
-|      David J. Wheeler                                    |
-|      Roger M. Needham                                    |
-|                                                          |
-| Code Author: Ma Bingyao <mabingyao@gmail.com>            |
-| LastModified: Oct 4, 2016                                |
-|                                                          |
-\**********************************************************/
-
-/*jshint node:true, eqeqeq:true */
 'use strict';
 
 var delta = 0x9E3779B9;

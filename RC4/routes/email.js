@@ -23,11 +23,13 @@ router.get('/compose', require('../middleware/auth.js'), function(req, res){
     var cipher_config       = req.body.key_sender;
     var ciphertext          = CryptoJS.RC4.encrypt(db_message_plain, cipher_config);
     // var plaintext           = CryptoJS.RC4.decrypt(ciphertext, cipher_config);
-    var plaintext           = CryptoJS.RC4.decrypt(ciphertext, cipher_config).toString(CryptoJS.enc.Utf8);
+    // var plaintext           = CryptoJS.RC4.decrypt(ciphertext, cipher_config).toString(CryptoJS.enc.Utf8);
 
     console.log("INI CIPHERNYA >>>>>> " + ciphertext);
-    console.log("INI PLAINNYA  >>>>>> " + plaintext);
     console.log("INI KEYNYA  >>>>>> " + cipher_config);
+
+    // console.log("Key Words >>>" + keyWords);
+    // console.log("Key SigBytes >>>" + keySigBytes);
 
     // var d = cipher_config.encodeString(db_message_plain);
     // var e = cipher_config.decodeString(d);
